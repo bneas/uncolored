@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Uncolored (Risks Assesment Tool).jnlp">
+  <information>
+    <title>Uncolored (Risks Assesment Tool)</title>
+    <vendor>Benny</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\fontawesomefx-8.1.jar" size="179086" download="eager" />
+    <jar href="lib\jfoenix-1.10.0.jar" size="2414671" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Uncolored (Risks Assesment Tool)" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="uncolored.main.Launch"  name="Uncolored (Risks Assesment Tool)" />
+  <update check="always"/>
+</jnlp>

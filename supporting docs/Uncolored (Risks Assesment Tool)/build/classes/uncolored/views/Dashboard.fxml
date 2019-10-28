@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="BorderPane" prefHeight="540.0" prefWidth="780.0" styleClass="parent" stylesheets="@Stylesheet.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uncolored.controllers.DashboardController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="780.0" styleClass="top-bar">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="120.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../drawables/company_logo.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="IT Risk Assesment ">
+                           <font>
+                              <Font name="SansSerif Regular" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <FontAwesomeIcon iconName="EXPAND" size="1.5em" stroke="WHITE">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </FontAwesomeIcon>
+                        <FontAwesomeIcon iconName="POWER_OFF" size="1.5em" stroke="WHITE" />
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="780.0" styleClass="top-bar">
+               <children>
+                  <HBox id="currentRisk" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#changeContent" prefHeight="35.0" styleClass="top-bar-btn-bg">
+                     <children>
+                        <FontAwesomeIcon iconName="PLUS" size="1.5em" stroke="WHITE" styleClass="top-bar-btn-icons" />
+                        <Label styleClass="top-bar-btn-label" text="Current Risk">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="SansSerif Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </HBox>
+                  <HBox id="nAnalysis" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#changeContent" prefHeight="35.0" styleClass="top-bar-btn-bg">
+                     <children>
+                        <FontAwesomeIcon iconName="PLUS" size="1.5em" stroke="WHITE" styleClass="top-bar-btn-icons" />
+                        <Label styleClass="top-bar-btn-label" text="New Analysis">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="SansSerif Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <HBox id="bAnalysis" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#changeContent" prefHeight="35.0" styleClass="top-bar-btn-bg">
+                     <children>
+                        <FontAwesomeIcon iconName="BAR_CHART" size="1.5em" stroke="WHITE" styleClass="top-bar-btn-icons" />
+                        <Label styleClass="top-bar-btn-label" text="Baseline Analysis">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="SansSerif Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <HBox id="sAnalysis" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#changeContent" prefHeight="35.0" styleClass="top-bar-btn-bg">
+                     <children>
+                        <FontAwesomeIcon iconName="DOWNLOAD" size="1.5em" stroke="WHITE" styleClass="top-bar-btn-icons" />
+                        <Label styleClass="top-bar-btn-label" text="Saved Analysis">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="SansSerif Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <HBox id="setting" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#changeContent" prefHeight="35.0" styleClass="top-bar-btn-bg">
+                     <children>
+                        <FontAwesomeIcon iconName="GEAR" size="1.5em" stroke="WHITE" styleClass="top-bar-btn-icons" />
+                        <Label styleClass="top-bar-btn-label" text="Settings">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="SansSerif Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" color="#6f6f6f" />
+         </effect>
+      </VBox>
+   </top>
+   <center>
+      <VBox fx:id="content" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

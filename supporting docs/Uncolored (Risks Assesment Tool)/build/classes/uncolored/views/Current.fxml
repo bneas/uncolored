@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox id="VBox" alignment="CENTER" prefHeight="490.0" prefWidth="780.0" stylesheets="@Stylesheet.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uncolored.controllers.CurrentController">
+   <children>
+      <HBox alignment="CENTER">
+         <children>
+            <LineChart fx:id="linechart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="400.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </LineChart>
+            <VBox alignment="CENTER">
+               <children>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity">
+                     <children>
+                        <Label text="Primary" textFill="#12adc9">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" style="-fx-background-color: white;">
+                           <children>
+                              <VBox alignment="BOTTOM_LEFT">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" styleClass="box-border">
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.3" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <children>
+                                          <Label text="Loss Events / Year">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" styleClass="box-border">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.3" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label text="Loss Magnitude">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER" style="-fx-background-color: F8F8F8;">
+                                       <children>
+                                          <Label text="Min">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" styleClass="box-border">
+                                       <children>
+                                          <Label text="0">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.4" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" styleClass="box-border">
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.3" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label text="\$102.5k">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox>
+                                 <children>
+                                    <HBox alignment="CENTER" style="-fx-background-color: F8F8F8;">
+                                       <children>
+                                          <Label text="Avg">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" styleClass="box-border">
+                                       <children>
+                                          <Label text="0.15">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.4" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" styleClass="box-border">
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.3" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label text="\$644.4k">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox>
+                                 <children>
+                                    <HBox alignment="CENTER" style="-fx-background-color: F8F8F8;">
+                                       <children>
+                                          <Label text="Max">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" styleClass="box-border">
+                                       <children>
+                                          <Label text="1">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.4" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" styleClass="box-border">
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.3" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label text="\$2.0M">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity">
+                     <children>
+                        <Label text="Secondary" textFill="#f6d433">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" style="-fx-background-color: white;">
+                           <children>
+                              <VBox alignment="BOTTOM_LEFT">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" styleClass="box-border">
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.3" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <children>
+                                          <Label text="Loss Events / Year">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" styleClass="box-border">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.3" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label text="Loss Magnitude">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER" style="-fx-background-color: F8F8F8;">
+                                       <children>
+                                          <Label text="Min">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" styleClass="box-border">
+                                       <children>
+                                          <Label text="0">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.4" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" styleClass="box-border">
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.3" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label text="\$102.5k">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox>
+                                 <children>
+                                    <HBox alignment="CENTER" style="-fx-background-color: F8F8F8;">
+                                       <children>
+                                          <Label text="Avg">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" styleClass="box-border">
+                                       <children>
+                                          <Label text="0.15">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.4" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" styleClass="box-border">
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.3" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label text="\$644.4k">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox>
+                                 <children>
+                                    <HBox alignment="CENTER" style="-fx-background-color: F8F8F8;">
+                                       <children>
+                                          <Label text="Max">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" styleClass="box-border">
+                                       <children>
+                                          <Label text="1">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.4" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" styleClass="box-border">
+                                       <VBox.margin>
+                                          <Insets bottom="0.3" left="0.3" right="0.3" top="0.3" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label text="\$2.0M">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="Vulnerability" textFill="#f25656">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="TOP_RIGHT" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" text="11.85%">
+                                 <font>
+                                    <Font name="Arial Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

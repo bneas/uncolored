@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox id="VBox" fx:id="vbox" prefHeight="490.0" prefWidth="780.0" stylesheets="@Stylesheet.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uncolored.controllers.NewAnalysisController">
+   <children>
+      <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0">
+         <children>
+            <Label prefWidth="200.0" text="New Analysis">
+               <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0">
+         <children>
+            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="420.0" promptText="Name Analysis" styleClass="txtfld">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextField>
+         </children>
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0">
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+         <children>
+            <Label prefWidth="200.0" text="Analysis Scope">
+               <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+               </font>
+            </Label>
+            <JFXCheckBox text="Save Analysis to Baseline">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </JFXCheckBox>
+         </children>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+         <children>
+            <TextArea prefHeight="200.0" prefWidth="420.0" promptText="Write a description" styleClass="txtfld" wrapText="true">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextArea>
+         </children>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0">
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+         <children>
+            <Label prefWidth="200.0" text="Analysis Purpose">
+               <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0">
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+         <children>
+            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="420.0" promptText="Text data to tied analysis" styleClass="txtfld">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0">
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+         <children>
+            <ComboBox prefHeight="30.0" prefWidth="200.0" promptText="Select Asset (s)" style="-fx-background-color: white; -fx-background-radius: 0px;" />
+            <ComboBox prefHeight="30.0" prefWidth="200.0" promptText="Select Threat Actor (s)" style="-fx-background-color: white; -fx-background-radius: 0px;">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ComboBox>
+            <ComboBox prefHeight="30.0" prefWidth="200.0" promptText="Select Threat Effect (s)" style="-fx-background-color: white; -fx-background-radius: 0px;">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ComboBox>
+         </children>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0">
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+         <children>
+            <ComboBox disable="true" prefHeight="30.0" prefWidth="200.0" promptText="Select Asset (s)" style="-fx-background-color: white; -fx-background-radius: 0px;" visible="false" />
+            <ComboBox disable="true" prefHeight="30.0" prefWidth="200.0" promptText="Select Threat Actor (s)" style="-fx-background-color: white; -fx-background-radius: 0px;" visible="false">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ComboBox>
+            <JFXButton buttonType="RAISED" onAction="#next" prefHeight="35.0" prefWidth="200.0" styleClass="nxtbtn" text="Next">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <graphic>
+                  <FontAwesomeIcon iconName="ARROW_RIGHT" size="1.3em" stroke="WHITE" styleClass="nxtbtn-icon" />
+               </graphic>
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

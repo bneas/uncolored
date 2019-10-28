@@ -1,0 +1,106 @@
+The following variables will be calculated based on the user input:
+For the calculations, each section (i.e. Vulnerability (Vuln), Threat Event Frequency (TEF), etc.) will have a PERT Mean (PMean) established and a PERT Standard Deviation (PSD)
+
+PERT Mean weighting will vary based on the confidence level. For Very High CL, the weighting will be (Min + (4*ML) + Max)/6. For each level down, the ML will be decreased by .5, and the Min and Max increased by .25 each. Very Low Rating would be calculated as ((2*Min) + (2*ML) + (2*Max))/6
+
+PERT Standard Deviation will be calculated as (Max-Min)/6
+
+For the Vulnerability (Vuln) section:
+Vulnerability occurs any time that TCap exceeds RS, or anytime that RS (Resistance Strength) is less than TCap (Threat Capability)
+Monte Carlo simulations should be used to determine the probability of these two events occuring, for TCap and RS, 10,000 random numbers to be calcuated using the PMean, PSD, and a random point of probability or distribution. After the 10,000 probabilities are created, they should be analyzed to determine every occurance of TCap being greater than RS. This analysis constitutes 1 round. 100 rounds should be performed for each occurence (Count_of_TCap_Output>RSMax)/10,000, (Count_of_RS_Output<TCapMin)/10,000, (Count_of_TCap_Output>PMean for RS)/10,000, (Count_of_RS_Output<PMean for TCap)/10,000, (Count_of_TCap_Output>RSMin)/10,000, (Count_of_RS_Output<TCapMax)/10,000
+
+VulnMin = ((Count_of_TCap_Output>RSMax)/10,000) * ((Count_of_RS_Output<TCapMin)/10,000)
+VulnML = (Count_of_TCap_Output>PMean for RS)/10,000) * ((Count_of_RS_Output<PMean for TCap)/10,000)
+VulnMax = (Count_of_TCap_Output>RSMin)/10,000) * ((Count_of_RS_Output<TCapMax)/10,000)
+VulnCL = Average of TCapCL and RSCL #round to the nearest value of rating. Tie would be rounded up. Very Low rating would be .1, Low rating would be .3, Moderate rating would be .5, High rating would be .7, and Very High rating would be .9
+
+
+For the Threat Event Frequency (TEF) section:
+TEF is the product of the Contact Frequency and Probability of Action variables
+
+10,000 probabilities should be calcuated for both CF and PoA using their PMean and PSD. The following calculations should be captured for both CF and PoA from the 10,000 probabilities: average (or mean), standard deviation, lower bound (mean - (2*Standard Deviation), and upper bound (mean + (2*Standard Deviation). This would constitute 1 round, 100 rounds should be performed.
+
+TEFMin = (avg of 100 rounds for CF lower bound) * (avg of 100 rounds for PoA lower bound)
+TEFML = (avg of 100 rounds for CF mean) * (avg of 100 rounds for PoA mean)
+TEFMax = (avg of 100 rounds for CF upper bound) * (avg of 100 rounds for PoA upper bound)
+TEFCL = Average of CFCL and PoACL #use CL ratings from above
+
+
+For the Loss Event Frequency (LEF) section:
+LEF is the product of the TEF and Vuln variables
+
+10,000 probabilities should be calcuated for both TEF and Vuln using their PMean and PSD. The following calculations should be captured for both TEF and Vuln from the 10,000 probabilities: average (or mean), standard deviation, lower bound (mean - (2*Standard Deviation), and upper bound (mean + (2*Standard Deviation). This would constitute 1 round, 100 rounds should be performed.
+
+LEFMin = (avg of 100 rounds for TEF lower bound) * (avg of 100 rounds for Vuln lower bound)
+LEFML = (avg of 100 rounds for TEF mean) * (avg of 100 rounds for Vuln mean)
+LEFMax = (avg of 100 rounds for TEF upper bound) * (avg of 100 rounds for Vuln upper bound)
+LEFCL = Average of TEFCL and VulnCL #use CL ratings from above
+
+
+For the Primary Loss Magnitude (PLM) section:
+
+
+PLMTotalMin = sum of minimum categories in the PLM section (PLMProdMin, PLMReplaceMin,PLMResponseMin,PLMReputMin, PLMCompeteAdvMin, PLMJudgeMin)
+PLMTotalML = sum of the most likely (ML) categories in the PLM section (PLMProdML, PLMReplaceML,PLMResponseML,PLMReputML, PLMCompeteAdvML, PLMJudgeML)
+PLMTotalMax = sum of the max categories in the PLM section (PLMProdMax, PLMReplaceMax,PLMResponseMax,PLMReputMax, PLMCompeteAdvMax, PLMJudgeMax)
+PLMTotalCL = average of the CL categories in the PLM section, round to nearest confidence category (PLMProdCL, PLMReplaceCL,PLMResponseCL,PLMReputCL, PLMCompeteAdvCL, PLMJudgeCL)
+
+
+For the Secondary Loss Magnitude (SLM) section:
+
+
+SLMTotalMin = sum of minimum categories in the SLM section (SLMProdMin, SLMReplaceMin,SLMResponseMin,SLMReputMin, SLMCompeteAdvMin, SLMJudgeMin)
+SLMTotalML = sum of the most likely (ML) categories in the SLM section (SLMProdML, SLMReplaceML,SLMResponseML,SLMReputML, SLMCompeteAdvML, SLMJudgeML)
+SLMTotalMax = sum of the max categories in the SLM section (SLMProdMax, SLMReplaceMax,SLMResponseMax,SLMReputMax, SLMCompeteAdvMax, SLMJudgeMax)
+SLMTotalCL = average of the CL categories in the SLM section, round to nearest confidence category (SLMProdCL, SLMReplaceCL,SLMResponseCL,SLMReputCL, SLMCompeteAdvCL, SLMJudgeCL)
+
+
+For the Secondary Risk (SR) section:
+SR is calcuated from the product of SLEF and SLM probabilities derived from the Monte Carlo simulations
+
+10,000 probabilities should be calcuated for both SLEF and SLM using their PMean and PSD. The following calculations should be captured for both SLEF and SLM from the 10,000 probabilities: average (or mean), standard deviation, lower bound (mean - (2*Standard Deviation), and upper bound (mean + (2*Standard Deviation). This would constitute 1 round, 100 rounds should be performed.
+
+SRMin = (avg of 100 rounds for SLEF lower bound) * (avg of 100 rounds for SLM lower bound)
+SRML = (avg of 100 rounds for SLEF mean) * (avg of 100 rounds for SLM mean)
+SRMax = (avg of 100 rounds for SLEF upper bound) * (avg of 100 rounds for SLM upper bound)
+SRCL = Average of SLEFCL and SLMCL #use CL ratings guideance from above 
+
+
+For the Annual Loss Exposure (ALE) section:
+The 4 variables from the following sections will be used to develop the ALE calculations: LEF, PLM, SLM, SLEF
+
+With the LEF, PLM, PLEF, and SLEF variables, calculated the PMean and PSD using the confidence level. Then calculate the 10,000 probabilities and capture the average (or mean), standard deviation, lower bound (mean - (2*Standard Deviation), and upper bound (mean + (2*Standard Deviation) for these sections. This constitutes 1 round, perform 100 rounds for each group of variables.
+
+
+Primary Loss Events per Year (PLEY)
+PLEYMin = avg of 100 rounds for LEF lower bound
+PLEYAvg = avg of 100 rounds for LEF mean
+PLEYMax = avg of 100 rounds for LEF upper bound
+
+Primary Loss Magnitude per Year (PLMY)
+PLMYMin = avg of 100 rounds for PLM lower bound
+PLMAYvg = avg of 100 rounds for PLM mean
+PLMYMax = avg of 100 rounds for PLM upper bound
+
+Seondary Loss Events per Year (SLEY)
+SLEYMin = PLEYMin * (avg of 100 rounds for SLEF lower bound)
+SLEYAvg = PLEYAvg * (avg of 100 rounds for SLEF mean)
+SLEYMax = PLEYMax * (avg of 100 rounds for SLEF upper bound)
+
+Secondary Loss Magnitude per Year (SLMY)
+SLMYMin = avg of 100 rounds for SLM lower bound
+SLMYAvg = avg of 100 rounds for SLM mean
+SLMYMax = avg of 100 rounds of SLM upper bound
+
+Annual Loss Expectancy (ALE)
+ALEMin = (PLEYMin * PLMMin) + (SLEYMin * SLLMMin)
+ALEAvg = (PLEYAvg * PLMAvg) + (SLEYAvg * SLLMAvg)
+ALEMax = (PLEYMax * PLMMax) + (SLEYMax * SLLMMax)
+
+Annual Loss Expectancy Vulnerability (ALEVuln) = percentage that ALE calculations from simulations exceed dollar figure configured in the settings (name variable ALEVuln_Baseline)
+
+#For homepage, ALE calculations would be plotted on a chart showing the annual loss curve
+
+
+
+
